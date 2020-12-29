@@ -1,10 +1,6 @@
 FROM node:alpine
 MAINTAINER heifeng
 
-#WORKDIR /app
-#COPY / /app
-
-
 RUN apk add --no-cache python3 python3-dev \
     git ca-certificates && \
     python3 -m ensurepip && \
@@ -19,5 +15,3 @@ RUN apk add --no-cache tzdata && \
 RUN pip3 install requests
 RUN pip3 install PyExecJS
 
-#EXPOSE 80
-#CMD python3 /app/real-url-proxy-server.py -p 80 -r 30000
